@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+    <body>
+        <div id="app"></div>
+
+        <script type="text/javascript">
+            const container = document.getElementById("app");
+            const fragment = document.createDocumentFragment();
+
+            for (let i = 0; i < 100000; i++) {
+                const newNode = document.createElement("p");
+                const newTextNode = document.createTextNode(`Hello World: ${i}`);
+
+                newNode.appendChild(newTextNode);
+                fragment.appendChild(newNode);
+            }
+
+            container.appendChild(fragment);
+        </script>
+    </body>
+</html>
